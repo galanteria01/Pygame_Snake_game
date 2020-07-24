@@ -13,11 +13,11 @@ pygame.display.set_caption("Input")
 BLACK = (0,0,0)
 WHITE = (255,255,255)
 RED = (255,0,0)
-
+WIDTH = 20
 foodCounter = 0
 NEWFOOD = 50
 FOODSIZE = 5
-player = pygame.Rect(100,50,20,20)
+player = pygame.Rect(1,1,WIDTH,20)
 foods = []
 for i in range(1):
     foods.append(pygame.Rect(random.randint(0,WINDOWWIDTH-FOODSIZE),random.randint(0,WINDOWHEIGHT-FOODSIZE)
@@ -99,6 +99,7 @@ while True:
     for food in foods[:]:
         if player.colliderect(food):
             foods.remove(food)
+            WIDTH += 10
     for i in range(1):
         pygame.draw.rect(window,RED,foods[i])
     pygame.display.update()
