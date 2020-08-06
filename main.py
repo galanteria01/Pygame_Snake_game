@@ -39,28 +39,25 @@ while True:
             if event.key == K_LEFT or event.key == ord('a'):
                 moveRight = False
                 moveLeft = True
+                moveUp =False
+                moveDown=False
             if event.key == K_RIGHT or event.key == ord('d'):
                 moveRight = True
                 moveLeft = False
+                moveUp = False
+                moveDown = False
             if event.key == K_UP or event.key == ord('w'):
                 moveUp = True
                 moveDown = False
+                moveLeft=False
+                moveRight=False
             if event.key == K_DOWN or event.key == ord('s'):
                 moveDown = True
                 moveUp = False
-
-        if event.type == KEYUP:
-            if event.key == K_ESCAPE:
-                pygame.quit()
-                sys.exit()
-            if event.key == K_LEFT or event.key == ord('a'):
                 moveLeft = False
-            if event.key == K_RIGHT or event.key == ord('d'):
                 moveRight = False
-            if event.key == K_UP or event.key == ord('w'):
-                moveUp = False
-            if event.key == K_DOWN or event.key == ord('s'):
-                moveDown = False
+
+
             if event.key == ord('x'):
                 player.top = random.randint(0,WINDOWHEIGHT-player.height)
                 player.left = random.randint(0,WINDOWWIDTH-player.width)
